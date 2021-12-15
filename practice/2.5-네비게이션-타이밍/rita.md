@@ -28,21 +28,27 @@ HTML 문서가 실행되면 onLoad()함수가 바로 호출됨
 
 ```javascript
 function onLoad() {
-                    var now = new Date().getTime();
-                    document.write("<img src="https://www.google.com/images/branding/
-                    googlelogo/1x/googlelogo_color_272x92dp.png"><br>");
-                    document.write("<img src="https://www.google.com/images/branding/
-                    googlelogo/1x/googlelogo_color_272x92dp.png"><br>");
-                    document.write("<img src="https://www.google.com/images/branding/
-                    googlelogo/1x/googlelogo_color_272x92dp.png"><br>");
-                    var page_load_time = now - performance.timing.navigationStart;
-                    console.log("User-perceived page loading time: " + page_load_time);
-            }
+        var now = new Date().getTime();
+        document.write(
+          "<img src='https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'><br>"
+        );
+        document.write(
+          "<img src='https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'><br>"
+        );
+        document.write(
+          "<img src='https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'><br>"
+        );
+        var page_load_time = now - performance.timing.navigationStart;
+        console.log("User-perceived page loading time: " + page_load_time);
+      }
 ```
 
+![image](https://user-images.githubusercontent.com/48556400/146195877-f2295226-9a99-45c8-9d9a-7de3cd49aafe.png)  
 
-
-#### 네비게이션 타이밍 API의 속성값 사용
+(실습해본 결과 이미지를 받던 받지 않던 100~200사이로 비슷했다..(?))  
+#### 네비게이션 타이밍 API의 속성값 사용  
+네비게이션 타이밍 API에 포함된 각 속성값을 사용하면 다양한 성능 지표를 얻을 수 있다.  
+pageLoadTime : API 속성값으로 구한 페이지 로딩 시간  
 
 ```javascript
 //Navigation Timing API 개체 생성
